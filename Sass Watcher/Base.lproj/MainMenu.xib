@@ -85,6 +85,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="vtF-20-UND"/>
+                <menuItem title="About Sass Watcher" id="6Jl-xT-jTc">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="orderFrontStandardAboutPanel:" target="-1" id="3eo-A2-9hE"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit" id="ndd-Ha-egn">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
