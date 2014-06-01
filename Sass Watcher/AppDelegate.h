@@ -17,7 +17,6 @@
 @property (retain, nonatomic) NSImage *statusImage;
 @property (retain, nonatomic) NSImage *statusHighlightImage;
 
-- (BOOL)checkSassInstalled;
 - (BOOL)checkCompassInstalled;
 
 @end

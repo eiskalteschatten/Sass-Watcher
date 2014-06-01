@@ -25,9 +25,7 @@
 		9378BA80193BCE060047769F /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9378BA7F193BCE060047769F /* CoreServices.framework */; };
 		937EED52193BD9F2005AAF61 /* CompassCreate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 937EED51193BD8A4005AAF61 /* CompassCreate.sh */; };
 		937EED53193BD9F3005AAF61 /* CompassWatch.sh in Resources */ = {isa = PBXBuildFile; fileRef = 937EED50193BD7D5005AAF61 /* CompassWatch.sh */; };
-		93D3F597193BA4AF00E5F58A /* install_sass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F596193BA4AF00E5F58A /* install_sass.scpt */; };
 		93D3F59A193BB6BF00E5F58A /* install_compass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F599193BB6BF00E5F58A /* install_compass.scpt */; };
-		93D3F5A0193BB86C00E5F58A /* install_sass_compass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F59F193BB86C00E5F58A /* install_sass_compass.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,9 +78,7 @@
 		9378BA7F193BCE060047769F /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		937EED50193BD7D5005AAF61 /* CompassWatch.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CompassWatch.sh; sourceTree = "<group>"; };
 		937EED51193BD8A4005AAF61 /* CompassCreate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = CompassCreate.sh; path = ../CompassCreate.sh; sourceTree = "<group>"; };
-		93D3F596193BA4AF00E5F58A /* install_sass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_sass.scpt; sourceTree = "<group>"; };
 		93D3F599193BB6BF00E5F58A /* install_compass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_compass.scpt; sourceTree = "<group>"; };
-		93D3F59F193BB86C00E5F58A /* install_sass_compass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_sass_compass.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,9 +196,7 @@
 		93D3F598193BAA2700E5F58A /* AppleScripts */ = {
 			isa = PBXGroup;
 			children = (
-				93D3F59F193BB86C00E5F58A /* install_sass_compass.scpt */,
 				93D3F599193BB6BF00E5F58A /* install_compass.scpt */,
-				93D3F596193BA4AF00E5F58A /* install_sass.scpt */,
 			);
 			name = AppleScripts;
 			sourceTree = "<group>";
@@ -288,11 +282,9 @@
 				9378BA7A193BBB920047769F /* dsa_pub.pem in Resources */,
 				937EED53193BD9F3005AAF61 /* CompassWatch.sh in Resources */,
 				937EED52193BD9F2005AAF61 /* CompassCreate.sh in Resources */,
-				93D3F597193BA4AF00E5F58A /* install_sass.scpt in Resources */,
 				93D3F59A193BB6BF00E5F58A /* install_compass.scpt in Resources */,
 				934BDE74193B63EF009F2260 /* Images.xcassets in Resources */,
 				934BDE6C193B63EF009F2260 /* Credits.rtf in Resources */,
-				93D3F5A0193BB86C00E5F58A /* install_sass_compass.scpt in Resources */,
 				934BDE72193B63EF009F2260 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
