@@ -110,6 +110,10 @@
 //    [script setStandardError: pipe];
 //    [script launch];
 //    [script waitUntilExit];
+    
+//    NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
+//    NSString *output = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+//    NSLog(output);
 }
 
 @end
