@@ -62,14 +62,6 @@
     }
 }
 
-- (IBAction)openFolders:(id)sender {
-    NSBundle *bundle = [NSBundle mainBundle];
-    
-    NSString *helperAppPath = [[bundle bundlePath] stringByAppendingString:@"/Contents/Resources/Sass Folders.app"];
-    
-    [[NSWorkspace sharedWorkspace] launchApplication:helperAppPath];
-}
-
 - (BOOL)checkSassInstalled {
     NSPipe *pipe = [NSPipe pipe];
     

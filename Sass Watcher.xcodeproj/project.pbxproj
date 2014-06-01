@@ -21,6 +21,7 @@
 		9378BA75193BBACD0047769F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9378BA74193BBACD0047769F /* Sparkle.framework */; };
 		9378BA78193BBB220047769F /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9378BA74193BBACD0047769F /* Sparkle.framework */; };
 		9378BA7A193BBB920047769F /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9378BA79193BBB920047769F /* dsa_pub.pem */; };
+		9378BA7E193BC3EC0047769F /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9378BA7D193BC3EC0047769F /* FolderViewController.m */; };
 		93D3F597193BA4AF00E5F58A /* install_sass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F596193BA4AF00E5F58A /* install_sass.scpt */; };
 		93D3F59A193BB6BF00E5F58A /* install_compass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F599193BB6BF00E5F58A /* install_compass.scpt */; };
 		93D3F5A0193BB86C00E5F58A /* install_sass_compass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F59F193BB86C00E5F58A /* install_sass_compass.scpt */; };
@@ -71,6 +72,8 @@
 		934BDE85193B63EF009F2260 /* Sass_WatcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sass_WatcherTests.m; sourceTree = "<group>"; };
 		9378BA74193BBACD0047769F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		9378BA79193BBB920047769F /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		9378BA7C193BC3EC0047769F /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
+		9378BA7D193BC3EC0047769F /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
 		93D3F596193BA4AF00E5F58A /* install_sass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_sass.scpt; sourceTree = "<group>"; };
 		93D3F599193BB6BF00E5F58A /* install_compass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_compass.scpt; sourceTree = "<group>"; };
 		93D3F59F193BB86C00E5F58A /* install_sass_compass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_sass_compass.scpt; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				934BDE6D193B63EF009F2260 /* AppDelegate.h */,
 				934BDE6E193B63EF009F2260 /* AppDelegate.m */,
 				934BDE70193B63EF009F2260 /* MainMenu.xib */,
+				9378BA7C193BC3EC0047769F /* FolderViewController.h */,
+				9378BA7D193BC3EC0047769F /* FolderViewController.m */,
 				934BDE73193B63EF009F2260 /* Images.xcassets */,
 				934BDE62193B63EF009F2260 /* Supporting Files */,
 			);
@@ -295,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9378BA7E193BC3EC0047769F /* FolderViewController.m in Sources */,
 				934BDE6F193B63EF009F2260 /* AppDelegate.m in Sources */,
 				934BDE68193B63EF009F2260 /* main.m in Sources */,
 			);
