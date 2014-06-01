@@ -38,6 +38,26 @@
                ReferencedContainer = "container:Sass Watcher.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "934BDEC2193B74FA009F2260"
+               BuildableName = "Sass WatcherTests.xctest"
+               BlueprintName = "Sass WatcherTests"
+               ReferencedContainer = "container:Sass Watcher/Sass Watcher/Sass Watcher.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "934BDF01193B772E009F2260"
+               BuildableName = "Sass FoldersTests.xctest"
+               BlueprintName = "Sass FoldersTests"
+               ReferencedContainer = "container:Sass Watcher.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

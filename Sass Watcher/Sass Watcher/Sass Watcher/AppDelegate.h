@@ -11,12 +11,5 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSMenu *statusMenu;
-
-@property (retain, nonatomic) NSStatusItem *statusItem;
-@property (retain, nonatomic) NSImage *statusImage;
-@property (retain, nonatomic) NSImage *statusHighlightImage;
-
-- (IBAction)openFolders:(id)sender;
 
 @end

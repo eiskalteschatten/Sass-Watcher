@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Sass Folders.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Sass Watcher.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>934BDE78193B63EF009F2260</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>934BDEE7193B772E009F2260</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>934BDF01193B772E009F2260</key>
 		<dict>
 			<key>primary</key>
 			<true/>

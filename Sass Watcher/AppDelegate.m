@@ -10,9 +10,26 @@
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+    
+    _statusImage = [NSImage imageNamed:@"menu-icon"];
+    _statusHighlightImage = [NSImage imageNamed:@"menu-icon-alt"];
+    
+    [_statusItem setImage:_statusImage];
+    [_statusItem setAlternateImage:_statusHighlightImage];
+    
+    [_statusItem setMenu:_statusMenu];
+    [_statusItem setToolTip:@"Sass Watcher"];
+    [_statusItem setHighlightMode:YES];
+}
+
+- (IBAction)openFolders:(id)sender {
+    NSBundle *bundle = [NSBundle mainBundle];
+    
+    NSString *helperAppPath = [[bundle bundlePath] stringByAppendingString:@"/Contents/Resources/Sass Folders.app"];
+    
+    [[NSWorkspace sharedWorkspace] launchApplication:helperAppPath];
 }
 
 @end
