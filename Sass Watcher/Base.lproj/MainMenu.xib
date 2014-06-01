@@ -17,6 +17,7 @@
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="FQ7-ry-GQW" customClass="SUUpdater"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="Sass Watcher" id="1Xt-HY-uBw">
@@ -79,6 +80,9 @@
                 <menuItem isSeparatorItem="YES" id="TcB-hz-AtL"/>
                 <menuItem title="Check for updates..." id="745-fW-95q">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="checkForUpdates:" target="FQ7-ry-GQW" id="BDl-Sz-r1W"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="vtF-20-UND"/>
                 <menuItem title="Quit" id="ndd-Ha-egn">

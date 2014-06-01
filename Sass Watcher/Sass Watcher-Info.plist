@@ -32,6 +32,10 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>http://mac.alexseifert.com/sass-watcher/SassWatcherUpdates.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 	<key>LSUIElement</key>
 	<true/>
 </dict>
