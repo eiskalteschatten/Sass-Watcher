@@ -73,7 +73,7 @@
                 <menuItem title="Manage watched folders..." id="jiY-TA-cid">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="openFolders:" target="Voe-Tx-rLC" id="UJX-cM-XnH"/>
+                        <action selector="makeKeyAndOrderFront:" target="I3y-Wf-GaF" id="Mbm-pS-Enc"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="TcB-hz-AtL"/>
@@ -89,5 +89,15 @@
                 </menuItem>
             </items>
         </menu>
+        <window title="Folders" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="I3y-Wf-GaF">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="qkw-dd-l0p">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+        </window>
     </objects>
 </document>

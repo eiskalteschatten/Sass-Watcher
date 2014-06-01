@@ -18,5 +18,7 @@
 @property (retain, nonatomic) NSImage *statusHighlightImage;
 
 - (IBAction)openFolders:(id)sender;
+- (BOOL)checkSassInstalled;
+- (BOOL)checkCompassInstalled;
 
 @end

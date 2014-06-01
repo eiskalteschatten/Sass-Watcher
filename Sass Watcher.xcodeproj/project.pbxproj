@@ -18,6 +18,9 @@
 		934BDE7C193B63EF009F2260 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934BDE5B193B63EF009F2260 /* Cocoa.framework */; };
 		934BDE84193B63EF009F2260 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 934BDE82193B63EF009F2260 /* InfoPlist.strings */; };
 		934BDE86193B63EF009F2260 /* Sass_WatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 934BDE85193B63EF009F2260 /* Sass_WatcherTests.m */; };
+		93D3F597193BA4AF00E5F58A /* install_sass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F596193BA4AF00E5F58A /* install_sass.scpt */; };
+		93D3F59A193BB6BF00E5F58A /* install_compass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F599193BB6BF00E5F58A /* install_compass.scpt */; };
+		93D3F5A0193BB86C00E5F58A /* install_sass_compass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F59F193BB86C00E5F58A /* install_sass_compass.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		934BDE81193B63EF009F2260 /* Sass WatcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sass WatcherTests-Info.plist"; sourceTree = "<group>"; };
 		934BDE83193B63EF009F2260 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		934BDE85193B63EF009F2260 /* Sass_WatcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sass_WatcherTests.m; sourceTree = "<group>"; };
+		93D3F596193BA4AF00E5F58A /* install_sass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_sass.scpt; sourceTree = "<group>"; };
+		93D3F599193BB6BF00E5F58A /* install_compass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_compass.scpt; sourceTree = "<group>"; };
+		93D3F59F193BB86C00E5F58A /* install_sass_compass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_sass_compass.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 		934BDE61193B63EF009F2260 /* Sass Watcher */ = {
 			isa = PBXGroup;
 			children = (
+				93D3F598193BAA2700E5F58A /* AppleScripts */,
 				934BDE6D193B63EF009F2260 /* AppDelegate.h */,
 				934BDE6E193B63EF009F2260 /* AppDelegate.m */,
 				934BDE70193B63EF009F2260 /* MainMenu.xib */,
@@ -152,6 +159,16 @@
 				934BDE82193B63EF009F2260 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93D3F598193BAA2700E5F58A /* AppleScripts */ = {
+			isa = PBXGroup;
+			children = (
+				93D3F59F193BB86C00E5F58A /* install_sass_compass.scpt */,
+				93D3F599193BB6BF00E5F58A /* install_compass.scpt */,
+				93D3F596193BA4AF00E5F58A /* install_sass.scpt */,
+			);
+			name = AppleScripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +248,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				934BDE66193B63EF009F2260 /* InfoPlist.strings in Resources */,
+				93D3F597193BA4AF00E5F58A /* install_sass.scpt in Resources */,
+				93D3F59A193BB6BF00E5F58A /* install_compass.scpt in Resources */,
 				934BDE74193B63EF009F2260 /* Images.xcassets in Resources */,
 				934BDE6C193B63EF009F2260 /* Credits.rtf in Resources */,
+				93D3F5A0193BB86C00E5F58A /* install_sass_compass.scpt in Resources */,
 				934BDE72193B63EF009F2260 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +486,7 @@
 				934BDE8B193B63EF009F2260 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		934BDE8C193B63EF009F2260 /* Build configuration list for PBXNativeTarget "Sass WatcherTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +495,7 @@
 				934BDE8E193B63EF009F2260 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
