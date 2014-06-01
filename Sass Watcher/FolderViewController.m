@@ -41,6 +41,8 @@
                 [_arrayFolders addObject:folder];
             }
         }
+        
+        [self startWatching];
     }
     else {
         NSLog(@"Could not get Application Support directory!");
@@ -61,6 +63,23 @@
         if ( ![[NSFileManager defaultManager] fileExistsAtPath:_plistFilePath] || [[NSFileManager defaultManager] isWritableFileAtPath:_plistFilePath]) {
             [[_arrayFolders arrangedObjects] writeToFile:_plistFilePath atomically:YES];
         }
+        
+        
+        NSString *pathToScript = [[NSBundle mainBundle] pathForResource:@"CompassCreate" ofType:@"sh"];
+        NSPipe *pipe = [NSPipe pipe];
+        NSTask *script = [[NSTask alloc] init];
+        
+        [script setLaunchPath:@"/bin/sh"];
+        [script setArguments: [NSArray arrayWithObjects: pathToScript, [[panel URL] path], nil]];
+        [script setStandardOutput: pipe];
+        [script setStandardError: pipe];
+        [script launch];
+        
+        NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
+        NSString *output = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+        NSLog(output);
+        
+        [self startWatching];
 	}
 }
 
@@ -68,9 +87,29 @@
     NSInteger selectedRow = [_tableView selectedRow];
     [_arrayFolders removeObjectAtArrangedObjectIndex:selectedRow];
     
-    if ( ![[NSFileManager defaultManager] fileExistsAtPath:_plistFilePath] || [[NSFileManager defaultManager] isWritableFileAtPath:_plistFilePath]) {
+    if (![[NSFileManager defaultManager] fileExistsAtPath:_plistFilePath] || [[NSFileManager defaultManager] isWritableFileAtPath:_plistFilePath]) {
         [[_arrayFolders arrangedObjects] writeToFile:_plistFilePath atomically:YES];
     }
+}
+
+- (void)startWatching {
+    NSArray *folders = _arrayFolders.arrangedObjects;
+    NSPipe *pipe = [NSPipe pipe];
+    NSString *pathToScript = [[NSBundle mainBundle] pathForResource:@"CompassWatch" ofType:@"sh"];
+    
+    for (id folder in folders) {
+        NSString *folderName = [folder objectForKey:@"folder"];
+        NSString *folderStr = [folderName stringByAppendingString:@":"];
+        folderStr = [folderStr stringByAppendingString:folderName];
+    }
+        
+//    NSTask *script = [[NSTask alloc] init];
+//    [script setLaunchPath:@"/bin/sh"];
+//    [script setArguments: [NSArray arrayWithObjects: pathToScript, , nil]];
+//    [script setStandardOutput: pipe];
+//    [script setStandardError: pipe];
+//    [script launch];
+//    [script waitUntilExit];
 }
 
 @end

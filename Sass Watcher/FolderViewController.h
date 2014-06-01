@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <CoreServices/CoreServices.h>
 
 @interface FolderViewController : NSViewController
 
@@ -17,5 +18,7 @@
 
 - (IBAction)addFolder:(id)sender;
 - (IBAction)removeFolder:(id)sender;
+
+- (void)startWatching;
 
 @end
