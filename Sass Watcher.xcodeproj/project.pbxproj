@@ -25,6 +25,7 @@
 		93AE63FC193C621F007A0F0D /* CompassCreate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 93AE63F9193C621F007A0F0D /* CompassCreate.sh */; };
 		93AE63FD193C621F007A0F0D /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE63FB193C621F007A0F0D /* LogViewController.m */; };
 		93D3F59A193BB6BF00E5F58A /* install_compass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F599193BB6BF00E5F58A /* install_compass.scpt */; };
+		93FEF25D193CA76000E5DB34 /* KillAll.sh in Resources */ = {isa = PBXBuildFile; fileRef = 93FEF25C193CA76000E5DB34 /* KillAll.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		93AE63FA193C621F007A0F0D /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
 		93AE63FB193C621F007A0F0D /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 		93D3F599193BB6BF00E5F58A /* install_compass.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = install_compass.scpt; sourceTree = "<group>"; };
+		93FEF25C193CA76000E5DB34 /* KillAll.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = KillAll.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			children = (
 				93AE63F9193C621F007A0F0D /* CompassCreate.sh */,
 				93D3F599193BB6BF00E5F58A /* install_compass.scpt */,
+				93FEF25C193CA76000E5DB34 /* KillAll.sh */,
 			);
 			name = Scripts;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93FEF25D193CA76000E5DB34 /* KillAll.sh in Resources */,
 				934BDE66193B63EF009F2260 /* InfoPlist.strings in Resources */,
 				93AE63FC193C621F007A0F0D /* CompassCreate.sh in Resources */,
 				9378BA7A193BBB920047769F /* dsa_pub.pem in Resources */,

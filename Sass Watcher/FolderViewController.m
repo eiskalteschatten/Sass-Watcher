@@ -106,7 +106,7 @@
         NSString *output = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         [_logView insertIntoLog:output];
         
-        [self performSelectorInBackground:@selector(startWatchingAll) withObject:folderPath];
+        [self performSelectorInBackground:@selector(startWatching:) withObject:folderPath];
 	}
 }
 
@@ -139,20 +139,7 @@
             compressed = @"--output-style=compressed";
         }
         
-        NSTask *script = [[NSTask alloc] init];
-        [script setLaunchPath:@"/usr/bin/compass"];
-        [script setArguments: [NSArray arrayWithObjects: @"watch", folderName, compressed, nil]];
-        [script setStandardOutput: pipe];
-        [script setStandardError: pipe];
-        [script launch];
-        
-        NSString *pId = [NSString stringWithFormat:@"%d", [script processIdentifier]];
-        [_processes setObject:pId forKey:folderName];
-        
-        [_logView insertIntoLog:[@"Watching " stringByAppendingString:folderName]];
-        [_logView insertIntoLog:[@"With arguments: " stringByAppendingString:compressed]];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskDidTerminate:) name:NSTaskDidTerminateNotification object:nil];
+        [self startWatching:folderName];
     }
 }
 
@@ -182,25 +169,22 @@
 
 - (void)stopWatchingAll {
     NSArray *allProcesses = [_processes allValues];
+    NSString *pId = [allProcesses componentsJoinedByString: @" "];
     NSPipe *pipe = [NSPipe pipe];
     NSTask *script = [[NSTask alloc] init];
+    NSString *pathToScript = [[NSBundle mainBundle] pathForResource:@"KillAll" ofType:@"sh"];
     
-    for (id process in allProcesses) {
-        NSString *pId = process;
-        
-        [script setLaunchPath:@"/bin/kill"];
-        [script setArguments: [NSArray arrayWithObjects: @"-9", pId, nil]];
-        [script setStandardOutput: pipe];
-        [script setStandardError: pipe];
-        [script launch];
-    }
-    
+    [script setLaunchPath:@"/bin/sh"];
+    [script setArguments: [NSArray arrayWithObjects: pathToScript, pId, nil]];
+    [script setStandardOutput: pipe];
+    [script setStandardError: pipe];
+    [script launch];
+
     [_logView insertIntoLog:@"All processes killed"];
 }
 
 - (void)stopWatching:(NSString*)folder {
     NSString *pId = [_processes objectForKey:folder];
-    
     NSPipe *pipe = [NSPipe pipe];
     NSTask *script = [[NSTask alloc] init];
     
