@@ -17,6 +17,7 @@
 - (void)awakeFromNib {
     _standardDefaults = [NSUserDefaults standardUserDefaults];
     _folders = [[NSMutableArray alloc] init];
+    _processes = [[NSMutableDictionary alloc] init];
     
     _cssCompresssed = [_standardDefaults boolForKey:@"compressCss"];
     
@@ -68,6 +69,19 @@
 	
 	if ([panel runModal] == NSOKButton) {
         NSString *folderPath = [[panel URL] path];
+        
+        NSArray *folders = _arrayFolders.arrangedObjects;
+        
+        for (id folder in folders) {
+            NSString *folderName = [folder objectForKey:@"folder"];
+            
+            if ([folderName isEqualToString: folderPath]) {
+                NSRunAlertPanel(NSLocalizedStringFromTable(@"Folder already watched", @"Localized", @"Folder already watched"), NSLocalizedStringFromTable(@"This folder is already being watched and cannot be added a second time. Please choose a different folder.", @"Localized", @"Please chood a different folder."), @"OK", nil, nil);
+                [_logView insertIntoLog:[@"Folder is already being watched: " stringByAppendingString:folderName]];
+                return;
+            }
+        }
+        
         NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:folderPath, @"folder", nil];
         [_arrayFolders addObject:dict];
         
@@ -92,7 +106,7 @@
         NSString *output = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         [_logView insertIntoLog:output];
         
-        //[self startWatching];
+        [self performSelectorInBackground:@selector(startWatchingAll) withObject:folderPath];
 	}
 }
 
@@ -116,13 +130,9 @@
 - (void)startWatchingAll {
     NSArray *folders = _arrayFolders.arrangedObjects;
     NSPipe *pipe = [NSPipe pipe];
-    NSString *pathToScript = [[NSBundle mainBundle] pathForResource:@"CompassWatch" ofType:@"sh"];
-    NSMutableArray *pIds = [[NSMutableArray alloc] init];
-    NSMutableArray *folderNames = [[NSMutableArray alloc] init];
     
     for (id folder in folders) {
         NSString *folderName = [folder objectForKey:@"folder"];
-        [folderNames addObject:folderName];
         NSString *compressed = @"";
         
         if (_cssCompresssed) {
@@ -137,50 +147,37 @@
         [script launch];
         
         NSString *pId = [NSString stringWithFormat:@"%d", [script processIdentifier]];
-        [pIds addObject:pId];
+        [_processes setObject:pId forKey:folderName];
         
         [_logView insertIntoLog:[@"Watching " stringByAppendingString:folderName]];
         [_logView insertIntoLog:[@"With arguments: " stringByAppendingString:compressed]];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskDidTerminate:) name:NSTaskDidTerminateNotification object:nil];
     }
-    
-    _processes = [NSDictionary dictionaryWithObjects:pIds forKeys:folderNames];
 }
 
-- (void)startWatching:(NSString*)folder {
-    NSArray *folders = _arrayFolders.arrangedObjects;
+- (void)startWatching:(NSString*)folderName {
     NSPipe *pipe = [NSPipe pipe];
-    NSString *pathToScript = [[NSBundle mainBundle] pathForResource:@"CompassWatch" ofType:@"sh"];
-    NSMutableArray *pIds = [[NSMutableArray alloc] init];
-    NSMutableArray *folderNames = [[NSMutableArray alloc] init];
+    NSString *compressed = @"";
     
-    for (id folder in folders) {
-        NSString *folderName = [folder objectForKey:@"folder"];
-        [folderNames addObject:folderName];
-        NSString *compressed = @"";
-        
-        if (_cssCompresssed) {
-            compressed = @"--output-style=compressed";
-        }
-        
-        NSTask *script = [[NSTask alloc] init];
-        [script setLaunchPath:@"/usr/bin/compass"];
-        [script setArguments: [NSArray arrayWithObjects: @"watch", folderName, compressed, nil]];
-        [script setStandardOutput: pipe];
-        [script setStandardError: pipe];
-        [script launch];
-        
-        NSString *pId = [NSString stringWithFormat:@"%d", [script processIdentifier]];
-        [pIds addObject:pId];
-        
-        [_logView insertIntoLog:[@"Watching " stringByAppendingString:folderName]];
-        [_logView insertIntoLog:[@"With arguments: " stringByAppendingString:compressed]];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskDidTerminate:) name:NSTaskDidTerminateNotification object:nil];
+    if (_cssCompresssed) {
+        compressed = @"--output-style=compressed";
     }
     
-    _processes = [NSDictionary dictionaryWithObjects:pIds forKeys:folderNames];
+    NSTask *script = [[NSTask alloc] init];
+    [script setLaunchPath:@"/usr/bin/compass"];
+    [script setArguments: [NSArray arrayWithObjects: @"watch", folderName, compressed, nil]];
+    [script setStandardOutput: pipe];
+    [script setStandardError: pipe];
+    [script launch];
+    
+    NSString *pId = [NSString stringWithFormat:@"%d", [script processIdentifier]];
+    [_processes setObject:pId forKey:folderName];
+    
+    [_logView insertIntoLog:[@"Watching " stringByAppendingString:folderName]];
+    [_logView insertIntoLog:[@"With arguments: " stringByAppendingString:compressed]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskDidTerminate:) name:NSTaskDidTerminateNotification object:nil];
 }
 
 - (void)stopWatching:(NSString*)folder {

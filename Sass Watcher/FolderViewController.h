@@ -20,14 +20,14 @@
 @property (assign) BOOL cssCompresssed;
 
 @property (retain, nonatomic) NSMutableArray *folders;
-@property (retain, nonatomic) NSDictionary *processes;
+@property (retain, nonatomic) NSMutableDictionary *processes;
 @property (retain, nonatomic) NSString *plistFilePath;
 
 - (IBAction)addFolder:(id)sender;
 - (IBAction)removeFolder:(id)sender;
 
 - (void)startWatchingAll;
-- (void)startWatching:(NSString*)folder;
+- (void)startWatching:(NSString*)folderName;
 - (void)stopWatching:(NSString*)folder;
 - (void)taskDidTerminate:(NSNotification *)notification;
 

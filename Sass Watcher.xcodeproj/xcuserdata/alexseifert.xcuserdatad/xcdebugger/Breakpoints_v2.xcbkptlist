@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423400797.538806"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "-startWatchingAll"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423397675.234878"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-addFolder:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423397675.234878"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "-addFolder:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423397675.234878"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-addFolder:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423399164.08148"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "-removeFolder:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423397675.234878"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-removeFolder:"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423400797.538806"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "-startWatchingAll"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423400797.538806"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-startWatchingAll"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423400797.538806"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "-startWatchingAll"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423400797.538806"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "-startWatchingAll"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423401917.070245"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "-compressCss:"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423400797.538806"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "-stopWatching:"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,12 +202,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423400797.538806"
+            timestampString = "423403156.218557"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "-stopWatching:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sass Watcher/FolderViewController.m"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
             endingLineNumber = "160"
-            landmarkName = "-stopWatching:"
+            landmarkName = "-startWatching:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -218,13 +234,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423400797.538806"
+            timestampString = "423403156.218557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "-startWatchingAll"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-addFolder:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FolderViewController addFolder:]"
+                  moduleName = "Sass Watcher"
+                  urlString = "file:///Users/alexseifert/Programs/Sass%20Watcher/Sass%20Watcher/FolderViewController.m"
+                  timestampString = "423403156.468745"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "1157">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[FolderViewController addFolder:]"
+                  moduleName = "Sass Watcher"
+                  urlString = "file:///Users/alexseifert/Programs/Sass%20Watcher/Sass%20Watcher/FolderViewController.m"
+                  timestampString = "423403156.468909"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "1340">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -234,12 +280,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sass Watcher/FolderViewController.m"
-            timestampString = "423400797.538806"
+            timestampString = "423403210.297789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-startWatchingAll"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-addFolder:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
