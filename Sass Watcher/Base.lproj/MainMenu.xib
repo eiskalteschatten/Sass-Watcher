@@ -85,9 +85,6 @@
         </menu>
         <menu id="3cf-ze-TDo">
             <items>
-                <menuItem title="Compile all watched folders" id="gSg-Fc-sZe">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
                 <menuItem title="Manage watched folders..." id="jiY-TA-cid">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
