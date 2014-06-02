@@ -23,7 +23,6 @@
 		9378BA7A193BBB920047769F /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9378BA79193BBB920047769F /* dsa_pub.pem */; };
 		9378BA7E193BC3EC0047769F /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9378BA7D193BC3EC0047769F /* FolderViewController.m */; };
 		9378BA80193BCE060047769F /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9378BA7F193BCE060047769F /* CoreServices.framework */; };
-		937EED53193BD9F3005AAF61 /* CompassWatch.sh in Resources */ = {isa = PBXBuildFile; fileRef = 937EED50193BD7D5005AAF61 /* CompassWatch.sh */; };
 		93AE63FC193C621F007A0F0D /* CompassCreate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 93AE63F9193C621F007A0F0D /* CompassCreate.sh */; };
 		93AE63FD193C621F007A0F0D /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE63FB193C621F007A0F0D /* LogViewController.m */; };
 		93D3F59A193BB6BF00E5F58A /* install_compass.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 93D3F599193BB6BF00E5F58A /* install_compass.scpt */; };
@@ -77,7 +76,6 @@
 		9378BA7C193BC3EC0047769F /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
 		9378BA7D193BC3EC0047769F /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
 		9378BA7F193BCE060047769F /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		937EED50193BD7D5005AAF61 /* CompassWatch.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CompassWatch.sh; sourceTree = "<group>"; };
 		93AE63F9193C621F007A0F0D /* CompassCreate.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CompassCreate.sh; sourceTree = "<group>"; };
 		93AE63FA193C621F007A0F0D /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
 		93AE63FB193C621F007A0F0D /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 		93D3F598193BAA2700E5F58A /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				937EED50193BD7D5005AAF61 /* CompassWatch.sh */,
 				93AE63F9193C621F007A0F0D /* CompassCreate.sh */,
 				93D3F599193BB6BF00E5F58A /* install_compass.scpt */,
 			);
@@ -286,7 +283,6 @@
 				934BDE66193B63EF009F2260 /* InfoPlist.strings in Resources */,
 				93AE63FC193C621F007A0F0D /* CompassCreate.sh in Resources */,
 				9378BA7A193BBB920047769F /* dsa_pub.pem in Resources */,
-				937EED53193BD9F3005AAF61 /* CompassWatch.sh in Resources */,
 				93D3F59A193BB6BF00E5F58A /* install_compass.scpt in Resources */,
 				934BDE74193B63EF009F2260 /* Images.xcassets in Resources */,
 				934BDE6C193B63EF009F2260 /* Credits.rtf in Resources */,

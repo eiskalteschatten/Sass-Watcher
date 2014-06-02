@@ -14,6 +14,7 @@
         <viewController id="z8P-tH-Cto" customClass="FolderViewController">
             <connections>
                 <outlet property="arrayFolders" destination="SwW-vL-alq" id="vda-HQ-k3f"/>
+                <outlet property="compressCss" destination="bhF-IG-Vrl" id="goa-BB-gUo"/>
                 <outlet property="logView" destination="FS5-uO-Ahf" id="opx-pc-llk"/>
                 <outlet property="tableView" destination="w87-TC-YLx" id="abR-Wm-zOe"/>
             </connections>
@@ -99,6 +100,19 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="TcB-hz-AtL"/>
+                <menuItem title="Preferences" id="Z73-cz-idq">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Preferences" id="xOT-om-fl2">
+                        <items>
+                            <menuItem title="Compress CSS" id="bhF-IG-Vrl">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="compressCss:" target="z8P-tH-Cto" id="Flb-SH-pgG"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="Check for updates..." id="745-fW-95q">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

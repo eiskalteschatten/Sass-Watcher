@@ -14,13 +14,23 @@
 @property (assign) IBOutlet NSArrayController *arrayFolders;
 @property (assign) IBOutlet NSTableView *tableView;
 @property (assign) IBOutlet LogViewController *logView;
+@property (assign) IBOutlet NSMenuItem *compressCss;
 
-@property (retain, nonatomic) NSMutableArray* folders;
+@property (assign) NSUserDefaults *standardDefaults;
+@property (assign) BOOL cssCompresssed;
+
+@property (retain, nonatomic) NSMutableArray *folders;
+@property (retain, nonatomic) NSDictionary *processes;
 @property (retain, nonatomic) NSString *plistFilePath;
 
 - (IBAction)addFolder:(id)sender;
 - (IBAction)removeFolder:(id)sender;
 
-- (void)startWatching;
+- (void)startWatchingAll;
+- (void)startWatching:(NSString*)folder;
+- (void)stopWatching:(NSString*)folder;
+- (void)taskDidTerminate:(NSNotification *)notification;
+
+- (IBAction)compressCss:(id)sender;
 
 @end

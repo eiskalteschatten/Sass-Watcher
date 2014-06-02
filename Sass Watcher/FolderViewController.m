@@ -15,7 +15,17 @@
 @implementation FolderViewController
 
 - (void)awakeFromNib {
+    _standardDefaults = [NSUserDefaults standardUserDefaults];
     _folders = [[NSMutableArray alloc] init];
+    
+    _cssCompresssed = [_standardDefaults boolForKey:@"compressCss"];
+    
+    if (_cssCompresssed) {
+        [_compressCss setState:NSOnState];
+    }
+    else {
+        [_compressCss setState:NSOffState];
+    }
     
     NSString* bundleID = [[NSBundle mainBundle] bundleIdentifier];
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -42,7 +52,7 @@
             }
         }
         
-        [self startWatching];
+        [self performSelectorInBackground:@selector(startWatchingAll) withObject:nil];
     }
     else {
         NSLog(@"Could not get Application Support directory!");
@@ -82,7 +92,7 @@
         NSString *output = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         [_logView insertIntoLog:output];
         
-        [self startWatching];
+        //[self startWatching];
 	}
 }
 
@@ -99,27 +109,116 @@
     
     NSString *removedFolder = [@"Removed folder from watch list: " stringByAppendingString:folderPath];
     [_logView insertIntoLog:removedFolder];
+    
+    [self stopWatching:folderPath];
 }
 
-- (void)startWatching {
+- (void)startWatchingAll {
     NSArray *folders = _arrayFolders.arrangedObjects;
     NSPipe *pipe = [NSPipe pipe];
     NSString *pathToScript = [[NSBundle mainBundle] pathForResource:@"CompassWatch" ofType:@"sh"];
+    NSMutableArray *pIds = [[NSMutableArray alloc] init];
+    NSMutableArray *folderNames = [[NSMutableArray alloc] init];
     
     for (id folder in folders) {
         NSString *folderName = [folder objectForKey:@"folder"];
+        [folderNames addObject:folderName];
+        NSString *compressed = @"";
         
-//        NSTask *script = [[NSTask alloc] init];
-//        [script setLaunchPath:@"/bin/sh"];
-//        [script setArguments: [NSArray arrayWithObjects: pathToScript, folderName, nil]];
-//        [script setStandardOutput: pipe];
-//        [script setStandardError: pipe];
-//        [script launch];
-//    
-//        NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
-//        NSString *output = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-        //[_logView insertIntoLog:output];
+        if (_cssCompresssed) {
+            compressed = @"--output-style=compressed";
+        }
+        
+        NSTask *script = [[NSTask alloc] init];
+        [script setLaunchPath:@"/usr/bin/compass"];
+        [script setArguments: [NSArray arrayWithObjects: @"watch", folderName, compressed, nil]];
+        [script setStandardOutput: pipe];
+        [script setStandardError: pipe];
+        [script launch];
+        
+        NSString *pId = [NSString stringWithFormat:@"%d", [script processIdentifier]];
+        [pIds addObject:pId];
+        
+        [_logView insertIntoLog:[@"Watching " stringByAppendingString:folderName]];
+        [_logView insertIntoLog:[@"With arguments: " stringByAppendingString:compressed]];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskDidTerminate:) name:NSTaskDidTerminateNotification object:nil];
     }
+    
+    _processes = [NSDictionary dictionaryWithObjects:pIds forKeys:folderNames];
+}
+
+- (void)startWatching:(NSString*)folder {
+    NSArray *folders = _arrayFolders.arrangedObjects;
+    NSPipe *pipe = [NSPipe pipe];
+    NSString *pathToScript = [[NSBundle mainBundle] pathForResource:@"CompassWatch" ofType:@"sh"];
+    NSMutableArray *pIds = [[NSMutableArray alloc] init];
+    NSMutableArray *folderNames = [[NSMutableArray alloc] init];
+    
+    for (id folder in folders) {
+        NSString *folderName = [folder objectForKey:@"folder"];
+        [folderNames addObject:folderName];
+        NSString *compressed = @"";
+        
+        if (_cssCompresssed) {
+            compressed = @"--output-style=compressed";
+        }
+        
+        NSTask *script = [[NSTask alloc] init];
+        [script setLaunchPath:@"/usr/bin/compass"];
+        [script setArguments: [NSArray arrayWithObjects: @"watch", folderName, compressed, nil]];
+        [script setStandardOutput: pipe];
+        [script setStandardError: pipe];
+        [script launch];
+        
+        NSString *pId = [NSString stringWithFormat:@"%d", [script processIdentifier]];
+        [pIds addObject:pId];
+        
+        [_logView insertIntoLog:[@"Watching " stringByAppendingString:folderName]];
+        [_logView insertIntoLog:[@"With arguments: " stringByAppendingString:compressed]];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskDidTerminate:) name:NSTaskDidTerminateNotification object:nil];
+    }
+    
+    _processes = [NSDictionary dictionaryWithObjects:pIds forKeys:folderNames];
+}
+
+- (void)stopWatching:(NSString*)folder {
+    NSString *pId = [_processes objectForKey:folder];
+    
+    NSPipe *pipe = [NSPipe pipe];
+    NSTask *script = [[NSTask alloc] init];
+    
+    [script setLaunchPath:@"/bin/kill"];
+    [script setArguments: [NSArray arrayWithObjects: @"-9", pId, nil]];
+    [script setStandardOutput: pipe];
+    [script setStandardError: pipe];
+    [script launch];
+    
+    [_logView insertIntoLog:[@"Killed Compass Watch process for " stringByAppendingString:folder]];
+}
+
+- (IBAction)compressCss:(id)sender {
+	if (!_cssCompresssed) {
+        _cssCompresssed = YES;
+        [_compressCss setState:NSOnState];
+        [_standardDefaults setBool:YES forKey:@"compressCss"];
+	}
+	else {
+        _cssCompresssed = NO;
+        [_compressCss setState:NSOffState];
+        [_standardDefaults setBool:NO forKey:@"compressCss"];
+	}
+    
+    [_standardDefaults synchronize];
+}
+
+- (void)taskDidTerminate:(NSNotification *)notification {
+    // Note this is called from the background thread, don't update the UI here
+    //NSLog(@"end");
+    
+    // Call updateUI method on main thread to update the user interface
+    //[self performSelectorOnMainThread:@selector(updateUI) withObject:nil waitUntilDone:NO];
 }
 
 @end
