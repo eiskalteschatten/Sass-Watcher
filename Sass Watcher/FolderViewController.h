@@ -7,12 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <CoreServices/CoreServices.h>
+#import "LogViewController.h"
 
 @interface FolderViewController : NSViewController
 
 @property (assign) IBOutlet NSArrayController *arrayFolders;
 @property (assign) IBOutlet NSTableView *tableView;
+@property (assign) IBOutlet LogViewController *logView;
+
 @property (retain, nonatomic) NSMutableArray* folders;
 @property (retain, nonatomic) NSString *plistFilePath;
 

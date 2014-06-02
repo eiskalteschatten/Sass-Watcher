@@ -29,11 +29,14 @@
         NSInteger button = NSRunAlertPanel(NSLocalizedStringFromTable(@"Install SASS and Compass", @"Localized", @"Install SASS and Compass"), NSLocalizedStringFromTable(@"The Ruby Gems for SASS and Compass are not installed on your system and are required for SASS Watcher to function properly. Would you like to install them?\n\nClicking \"Install\" will open a Terminal window and require administrative privileges.", @"Localized", @"The Ruby Gems for SASS and Compass are not installed on your system."), NSLocalizedStringFromTable(@"Install", @"Localized", @"Install"), NSLocalizedStringFromTable(@"Cancel", @"Localized", @"Cancel"), nil);
         
         if (button == NSAlertDefaultReturn) {
-            NSLog(@"Installing SASS and Compass...");
+            [_logView insertIntoLog:@"Installing SASS and Compass..."];
             NSURL *installScript = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:@"install_compass" ofType:@"scpt"]];
             NSDictionary* errors = [NSDictionary dictionary];
             NSAppleScript *appleScript = [[NSAppleScript alloc] initWithContentsOfURL:installScript error:&errors];
             [appleScript executeAndReturnError:nil];
+        }
+        else {
+            [_logView insertIntoLog:@"Sass Watcher cannot function without Sass and Compass. Please install them by restarting Sass Watcher and clicking the \"Install\" button."];
         }
     }
 }
@@ -53,7 +56,7 @@
         return YES;
     }
     @catch (NSException *exception) {
-        NSLog(@"Compass not installed");
+        [_logView insertIntoLog:@"Compass not installed"];
         return NO;
     }
 }

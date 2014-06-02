@@ -14,11 +14,20 @@
         <viewController id="z8P-tH-Cto" customClass="FolderViewController">
             <connections>
                 <outlet property="arrayFolders" destination="SwW-vL-alq" id="vda-HQ-k3f"/>
+                <outlet property="logView" destination="FS5-uO-Ahf" id="opx-pc-llk"/>
                 <outlet property="tableView" destination="w87-TC-YLx" id="abR-Wm-zOe"/>
+            </connections>
+        </viewController>
+        <viewController id="FS5-uO-Ahf" customClass="LogViewController">
+            <connections>
+                <outlet property="floatAboveWindows" destination="llT-PO-d8a" id="leM-jh-CdA"/>
+                <outlet property="logView" destination="Y2c-dj-DPX" id="zeX-Xa-OyJ"/>
+                <outlet property="window" destination="Baw-GY-6dt" id="gz7-K9-CmW"/>
             </connections>
         </viewController>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="logView" destination="FS5-uO-Ahf" id="9JP-RL-3Bd"/>
                 <outlet property="statusMenu" destination="3cf-ze-TDo" id="4yB-6f-UFy"/>
             </connections>
         </customObject>
@@ -83,6 +92,12 @@
                         <action selector="makeKeyAndOrderFront:" target="I3y-Wf-GaF" id="Mbm-pS-Enc"/>
                     </connections>
                 </menuItem>
+                <menuItem title="View log..." id="PWh-Je-5FZ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="makeKeyAndOrderFront:" target="Baw-GY-6dt" id="0Bp-Kv-fn6"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="TcB-hz-AtL"/>
                 <menuItem title="Check for updates..." id="745-fW-95q">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -105,7 +120,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Watched Folders" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="I3y-Wf-GaF">
+        <window title="Watched Folders" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="folderswindow" animationBehavior="default" id="I3y-Wf-GaF">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="163" y="199" width="480" height="260"/>
@@ -195,6 +210,17 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zB0-dK-Hxy">
+                        <rect key="frame" x="432" y="4" width="36" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundRect" title="Log" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Te-yo-jN5">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="cellTitle"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="makeKeyAndOrderFront:" target="Baw-GY-6dt" id="UiC-wa-Dzk"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Rmy-PR-081" secondAttribute="trailing" constant="-1" id="2xz-FB-PQ0"/>
@@ -206,6 +232,66 @@
             </view>
         </window>
         <arrayController id="SwW-vL-alq"/>
+        <window title="Log" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="logwindow" animationBehavior="default" id="Baw-GY-6dt">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="163" y="199" width="507" height="355"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <view key="contentView" id="LW3-li-ulu">
+                <rect key="frame" x="0.0" y="0.0" width="507" height="355"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxv-Mq-02y">
+                        <rect key="frame" x="-1" y="33" width="509" height="323"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <clipView key="contentView" id="CmW-1D-iM5">
+                            <rect key="frame" x="1" y="1" width="507" height="321"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" richText="NO" findStyle="panel" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="Y2c-dj-DPX">
+                                    <rect key="frame" x="0.0" y="0.0" width="507" height="321"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="507" height="321"/>
+                                    <size key="maxSize" width="516" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="507" height="321"/>
+                                    <size key="maxSize" width="516" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="WbR-xa-fmF">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="N1y-7g-I4b">
+                            <rect key="frame" x="492" y="1" width="16" height="321"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="llT-PO-d8a">
+                        <rect key="frame" x="9" y="9" width="190" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Float above other windows" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gQr-H1-phL">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="setFloatOption:" target="FS5-uO-Ahf" id="Utn-4c-H4p"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qxv-Mq-02y" firstAttribute="top" secondItem="LW3-li-ulu" secondAttribute="top" constant="-1" id="BFh-dQ-c20"/>
+                    <constraint firstItem="qxv-Mq-02y" firstAttribute="leading" secondItem="LW3-li-ulu" secondAttribute="leading" constant="-1" id="VHe-lG-Ckf"/>
+                    <constraint firstItem="llT-PO-d8a" firstAttribute="top" secondItem="qxv-Mq-02y" secondAttribute="bottom" constant="8" id="cPi-VR-Jq0"/>
+                    <constraint firstItem="llT-PO-d8a" firstAttribute="leading" secondItem="LW3-li-ulu" secondAttribute="leading" constant="11" id="gyy-3O-T1p"/>
+                    <constraint firstAttribute="trailing" secondItem="qxv-Mq-02y" secondAttribute="trailing" constant="-1" id="irH-HU-nek"/>
+                    <constraint firstAttribute="bottom" secondItem="llT-PO-d8a" secondAttribute="bottom" constant="11" id="sMK-GU-C0B"/>
+                </constraints>
+            </view>
+        </window>
     </objects>
     <resources>
         <image name="NSAddTemplate" width="8" height="8"/>
