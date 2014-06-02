@@ -180,6 +180,24 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(taskDidTerminate:) name:NSTaskDidTerminateNotification object:nil];
 }
 
+- (void)stopWatchingAll {
+    NSArray *allProcesses = [_processes allValues];
+    NSPipe *pipe = [NSPipe pipe];
+    NSTask *script = [[NSTask alloc] init];
+    
+    for (id process in allProcesses) {
+        NSString *pId = process;
+        
+        [script setLaunchPath:@"/bin/kill"];
+        [script setArguments: [NSArray arrayWithObjects: @"-9", pId, nil]];
+        [script setStandardOutput: pipe];
+        [script setStandardError: pipe];
+        [script launch];
+    }
+    
+    [_logView insertIntoLog:@"All processes killed"];
+}
+
 - (void)stopWatching:(NSString*)folder {
     NSString *pId = [_processes objectForKey:folder];
     

@@ -28,6 +28,7 @@
         </viewController>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="folderView" destination="z8P-tH-Cto" id="TBd-py-KLM"/>
                 <outlet property="logView" destination="FS5-uO-Ahf" id="9JP-RL-3Bd"/>
                 <outlet property="statusMenu" destination="3cf-ze-TDo" id="4yB-6f-UFy"/>
             </connections>

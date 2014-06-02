@@ -28,6 +28,7 @@
 
 - (void)startWatchingAll;
 - (void)startWatching:(NSString*)folderName;
+- (void)stopWatchingAll;
 - (void)stopWatching:(NSString*)folder;
 - (void)taskDidTerminate:(NSNotification *)notification;
 

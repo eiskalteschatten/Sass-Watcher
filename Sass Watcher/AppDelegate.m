@@ -61,4 +61,11 @@
     }
 }
 
+
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
+    [_folderView stopWatchingAll];
+    
+    return NSTerminateNow;
+}
+
 @end
