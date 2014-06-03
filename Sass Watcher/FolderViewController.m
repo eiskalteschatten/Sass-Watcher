@@ -210,6 +210,9 @@
 	}
     
     [_standardDefaults synchronize];
+    
+    [self stopWatchingAll];
+    [self performSelectorInBackground:@selector(startWatchingAll) withObject:nil];
 }
 
 - (void)taskDidTerminate:(NSNotification *)notification {
