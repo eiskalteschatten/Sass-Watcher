@@ -136,7 +136,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="163" y="199" width="480" height="260"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="qkw-dd-l0p">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="260"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -222,7 +222,7 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zB0-dK-Hxy">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zB0-dK-Hxy">
                         <rect key="frame" x="432" y="4" width="36" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="roundRect" title="Log" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Te-yo-jN5">
@@ -239,6 +239,8 @@
                     <constraint firstAttribute="bottom" secondItem="zKf-5p-uIy" secondAttribute="bottom" id="AtI-Q3-UNi"/>
                     <constraint firstItem="Rmy-PR-081" firstAttribute="top" secondItem="qkw-dd-l0p" secondAttribute="top" constant="-1" id="EkY-bZ-q6f"/>
                     <constraint firstItem="Rmy-PR-081" firstAttribute="leading" secondItem="qkw-dd-l0p" secondAttribute="leading" constant="-1" id="LLo-lg-YLo"/>
+                    <constraint firstAttribute="bottom" secondItem="zB0-dK-Hxy" secondAttribute="bottom" constant="5" id="bLg-a3-P5e"/>
+                    <constraint firstAttribute="trailing" secondItem="zB0-dK-Hxy" secondAttribute="trailing" constant="12" id="khO-LK-VJl"/>
                     <constraint firstAttribute="bottom" secondItem="Rmy-PR-081" secondAttribute="bottom" constant="27" id="mlz-E4-LQL"/>
                 </constraints>
             </view>
@@ -248,7 +250,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="163" y="199" width="507" height="355"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="LW3-li-ulu">
                 <rect key="frame" x="0.0" y="0.0" width="507" height="355"/>
                 <autoresizingMask key="autoresizingMask"/>
