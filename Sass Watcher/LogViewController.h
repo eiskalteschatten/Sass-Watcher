@@ -19,4 +19,6 @@
 - (void)insertIntoLog:(NSString*)string;
 - (IBAction)setFloatOption:(id)sender;
 
+- (IBAction)openWindow:(id)sender;
+
 @end

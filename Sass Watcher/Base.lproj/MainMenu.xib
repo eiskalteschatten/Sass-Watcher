@@ -17,6 +17,7 @@
                 <outlet property="compressCss" destination="bhF-IG-Vrl" id="goa-BB-gUo"/>
                 <outlet property="logView" destination="FS5-uO-Ahf" id="opx-pc-llk"/>
                 <outlet property="tableView" destination="w87-TC-YLx" id="abR-Wm-zOe"/>
+                <outlet property="window" destination="I3y-Wf-GaF" id="ndt-3c-4YV"/>
             </connections>
         </viewController>
         <viewController id="FS5-uO-Ahf" customClass="LogViewController">
@@ -88,13 +89,13 @@
                 <menuItem title="Manage watched folders..." id="jiY-TA-cid">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="makeKeyAndOrderFront:" target="I3y-Wf-GaF" id="Mbm-pS-Enc"/>
+                        <action selector="openWindow:" target="z8P-tH-Cto" id="10A-yZ-2jR"/>
                     </connections>
                 </menuItem>
                 <menuItem title="View log..." id="PWh-Je-5FZ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="makeKeyAndOrderFront:" target="Baw-GY-6dt" id="0Bp-Kv-fn6"/>
+                        <action selector="openWindow:" target="FS5-uO-Ahf" id="Blk-tg-bVW"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="TcB-hz-AtL"/>
@@ -136,7 +137,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="163" y="199" width="480" height="260"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="qkw-dd-l0p">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="260"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -230,7 +231,7 @@
                             <font key="font" metaFont="cellTitle"/>
                         </buttonCell>
                         <connections>
-                            <action selector="makeKeyAndOrderFront:" target="Baw-GY-6dt" id="UiC-wa-Dzk"/>
+                            <action selector="openWindow:" target="FS5-uO-Ahf" id="Via-lL-aXH"/>
                         </connections>
                     </button>
                 </subviews>
@@ -250,7 +251,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="163" y="199" width="507" height="355"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="LW3-li-ulu">
                 <rect key="frame" x="0.0" y="0.0" width="507" height="355"/>
                 <autoresizingMask key="autoresizingMask"/>

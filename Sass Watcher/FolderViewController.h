@@ -15,6 +15,7 @@
 @property (assign) IBOutlet NSTableView *tableView;
 @property (assign) IBOutlet LogViewController *logView;
 @property (assign) IBOutlet NSMenuItem *compressCss;
+@property (assign) IBOutlet NSWindow *window;
 
 @property (assign) NSUserDefaults *standardDefaults;
 @property (assign) BOOL cssCompresssed;
@@ -33,5 +34,7 @@
 - (void)taskDidTerminate:(NSNotification *)notification;
 
 - (IBAction)compressCss:(id)sender;
+
+- (IBAction)openWindow:(id)sender;
 
 @end

@@ -223,4 +223,9 @@
     //[self performSelectorOnMainThread:@selector(updateUI) withObject:nil waitUntilDone:NO];
 }
 
+- (IBAction)openWindow:(id)sender {
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+    [_window makeKeyAndOrderFront:self];
+}
+
 @end
